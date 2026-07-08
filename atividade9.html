@@ -1,0 +1,115 @@
+<!-- 
+ 1. Escreva um JSON com os dados de um aviso escolar.
+  {
+  "titulo": "Reunião de Pais e Mestres",
+  "descricao": "Reunião para discussão do desempenho dos alunos do 1º semestre",
+  "data": "2026-07-20",
+  "horario": "18:30",
+  "local": "Secretaria da escola",
+  "turma": "3ºT",
+  "prioridade": "alta",
+  "responsavel": "Coordenação Pedagógica"
+  }
+
+2. Escreva um JSON com os dados de uma tarefa.
+  {
+  "titulo": "Fazer pesquisa sobre reciclagem",
+  "descricao": "Pesquisar sobre a importância da reciclagem e criar um cartaz",
+  "disciplina": "Ciências",
+  "data_entrega": "2026-07-25",
+  "turma": "5º Ano A",
+  "professor": "Mariana Costa",
+  "status": "pendente",
+  "pontuacao": 10
+  }
+
+3. Escreva o pedido e a resposta de um login com e-mail e senha.
+  Pedido: 
+  POST /login HTTP/1.1
+  Host: escola.com.br
+  Content-Type: application/json
+
+  {
+  "email": "ana.silva@escola.com",
+  "senha": "senhaSegura123"
+  }
+
+  Respostas:
+  1.caso de sucesso
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+
+  {
+  "mensagem": "Login realizado com sucesso",
+  "usuario": {
+    "id": 5,
+    "nome": "Ana Silva",
+    "email": "ana.silva@escola.com",
+    "perfil": "aluna",
+    "turma": "8º Ano A"
+  },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+  }
+
+  2.caso de erro
+  HTTP/1.1 401 Unauthorized
+  Content-Type: application/json
+
+  {
+  "mensagem": "E-mail ou senha inválidos",
+  "erro": "Credenciais incorretas"
+  }
+
+4.Explique por que o servidor usa o código 201 ao criar um registro.
+  Porque ele indica que a requisição foi bem sucedida, o servidor recebeu e processou os dados corretamente.
+  Um novo recurso foi criado, o registro foi salvo no banco de dados com sucesso e está disponível.
+  Diferente do 200 que seria somente um ok, porque o 200 significa que a operação deu certo, mas o 201
+  especifica que algo novo foi criado como resultado da operação.
+
+5.Escreva o passo a passo completo de um cadastro de usuário, desde o preenchimento do formulário até a resposta do servidor.
+  Passo 1: Voce preenche o formulario. Voce digita seu nome, e-mail e senha
+  Clica em "Cadastrar"
+
+  Exemplo:
+  Nome: Joao
+  E-mail: joao@email.com
+  Senha: 123456
+
+  Passo 2: Navegador confere os dados. O navegador verifica se tudo esta certo
+  Pergunta: "Tem nome? Tem e-mail? A senha e valida?"
+  Se faltar algo: Aparece um erro: "Preencha todos os campos!"
+  O navegador NAO envia os dados
+  Se estiver tudo certo: Continua para o proximo passo
+
+  Passo 3: Navegador envia para o servidor
+  O navegador organiza os dados em formato JSON (nome: Joao, email: joao@email.com)
+  Envia via POST (metodo para criar coisas novas)
+
+  Passo 4: Servidor recebe e processa
+  O servidor recebe os dados
+  Faz 3 coisas:
+  Verifica se o e-mail ja existe
+  Criptografa a senha (transforma em codigo secreto)
+  Salva tudo no banco de dados
+  Passo 5: Servidor responde
+  O servidor envia uma resposta de volta
+  Se deu certo:
+  Codigo 201 = "Usuario CRIADO com sucesso"
+  Mensagem: "Cadastro realizado"
+  Se deu erro:
+  Codigo 400 = "Dados invalidos"
+  Mensagem: "E-mail ja cadastrado"
+
+  Passo 6: Navegador mostra o resultado
+  Voce ve na tela o que aconteceu
+  Se deu certo:
+  "Cadastro realizado com sucesso"
+  "Bem-vindo, Joao"
+  Se deu erro:
+  "Erro: E-mail ja cadastrado"
+  Voce tenta novamente com outro e-mail
+
+  Fluxo Completo
+  Voce preenche o formulario -> Navegador confere os dados -> Navegador envia via POST -> Servidor processa e salva -> Servidor responde -> Navegador mostra o resultado 
+
+-->

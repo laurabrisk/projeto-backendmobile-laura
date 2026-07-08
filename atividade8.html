@@ -1,0 +1,50 @@
+<!-- Cite dois exemplos de situações em que o navegador usaria o método GET.
+  Um bom exemplo de método get é quando acessam a página inicial de um site, quando você digita www.escola.com.br no navegador, 
+  ele faz um GET para buscar a página HTML principal. Ver uma lista de alunos, quando você clica em "Ver alunos" em um sistema
+  escolar por exemplo, o navegador faz um GET para /alunos para buscar todos os alunos cadastrados.
+
+Cite dois exemplos de situações em que o navegador usaria o método POST.
+  Criar uma conta em qualquer site, quando você preenche um formulário de email, senha e etc e clica em "cadastrar", o navegador
+  envia os dados via POST. Seguindo a mesma lógica, fazer login, quando você digita usuário e senha e clica em "entrar", o navegador 
+  usa POST para enviar as credenciais e entrar na sua conta
+
+Explique com suas palavras o que significa o código de status 404.
+  O código 404 é o "not found" ou não encontrado, acontece quando o navegador não encontra o caminho ou ele não existe.
+
+Explique o que acontece quando o servidor responde com 201.
+   O 201 é o "created" ou criado com sucesso, ele é mostrado quando os dados são processados corretamente e um novo recurso é criado.
+
+Escreva um pedido e uma resposta HTTP para o cadastro de um aviso escolar. 
+  Pedido:
+
+  POST /avisos HTTP/1.1
+  Host: escola.com.br
+  Content-Type: application/json
+
+  {
+    "titulo": "Reunião de Responsáveis",
+    "descricao": "Reunião com os pais dos alunos do 3º ano",
+    "data": "2026-07-15",
+    "horario": "19:00",
+    "turma": "3ºT"
+  } 
+    
+  Resposta:
+  
+  HTTP/1.1 201 Created
+  Content-Type: application/json
+  Location: /avisos/123
+
+  {
+    "id": 123,
+    "titulo": "Reunião de Responsáveis",
+    "descricao": "Reunião com os pais dos alunos do 3º ano",
+    "data": "2026-07-15",
+    "horario": "19:00",
+    "turma": "3ºT",
+    "criado_em": "2026-07-08T10:30:00Z",
+    "mensagem": "Aviso cadastrado com sucesso!"
+  }
+  -->
+
+  
